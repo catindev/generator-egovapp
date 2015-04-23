@@ -39,6 +39,13 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
 
+  pomfile: function () {
+    var path   = './pom.xml',
+        file   = this.readFileAsString(path);
+
+    this.write(path, "qwerty");
+  },
+
   install: function () {
     this.installDependencies();
   }
