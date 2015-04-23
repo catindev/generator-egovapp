@@ -1,0 +1,5 @@
+{
+    "directory": "node_modules/egov-pep-frontend/framework/bower_components",
+    "analytics": false,
+    "json" : "bower.json"
+}
