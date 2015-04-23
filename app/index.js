@@ -13,13 +13,12 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Yo! This is ' + chalk.red('Egovapp') + ', easy app scaffolder! Wow!'
+      'Yo! This is ' + chalk.red('Egovapp') + ', easy service scaffolder! Wow!'
     ));
 
     var prompts = [{
-      type: 'confirm',
       name: 'appname',
-      message: 'Репозиторий услуги',
+      message: 'Repo name',
       default: "egov-pep-app-p00-00"
     }];
 
@@ -33,10 +32,11 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
+      // this.fs.copy(
+      //   this.templatePath('_package.json'),
+      //   this.destinationPath('package.json')
+      // );
+      this.template('_package.json', 'package.json');
       this.fs.copy(
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
