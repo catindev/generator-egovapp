@@ -54,11 +54,12 @@ module.exports = yeoman.generators.Base.extend({
     var path   = './pom.xml',
         file   = this.readFileAsString(path);
     console.log(parser.parseString(file));
-        
+
     //this.write(this.webapp + "pom.xml", "qwerty");
   },
 
   install: function () {
-    this.installDependencies();
+    //this.installDependencies();
+    console.log("new app scaffolded!");
   }
 });
