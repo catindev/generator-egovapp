@@ -17,18 +17,6 @@ module.exports = yeoman.generators.Base.extend({
     ));
 
     this.webapp =  "webapp/src/main/webapp/";
-
-/*    var prompts = [{
-      name: 'appname',
-      message: 'Repo name',
-      default: "p00-00"
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.props = props;
-      // To access props later use this.props.someOption;
-      done();
-    }.bind(this));*/
     done();
   },
 
@@ -49,13 +37,13 @@ module.exports = yeoman.generators.Base.extend({
   var fs = require('fs'),
     xml2js = require('xml2js');
     var parser = new xml2js.Parser();
-
-
-    var path   = './pom.xml',
-        file   = this.readFileAsString(path);
-    console.log(parser.parseString(file));
-
-    //this.write(this.webapp + "pom.xml", "qwerty");
+    parser.addListener('end', function(result) {
+        console.dir(result);
+        console.log('Done.');
+    });
+    fs.readFile('./pom.xml', function(err, data) {
+        parser.parseString(data);
+    });
   },
 
   install: function () {
