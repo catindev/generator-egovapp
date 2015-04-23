@@ -38,7 +38,7 @@ module.exports = yeoman.generators.Base.extend({
     xml2js = require('xml2js');
     var parser = new xml2js.Parser();
     parser.addListener('end', function(pom) {
-        console.dir(pom);
+        console.dir(pom.project.build.pugins);
         console.log('Done.');
     });
     fs.readFile('./webapp/pom.xml', function(err, data) {
