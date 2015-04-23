@@ -46,10 +46,16 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   pomfile: function () {
+  var fs = require('fs'),
+    xml2js = require('xml2js');
+    var parser = new xml2js.Parser();
+
+
     var path   = './pom.xml',
         file   = this.readFileAsString(path);
-
-    this.write(this.webapp + "pom.xml", "qwerty");
+    console.log(parser.parseString(file));
+        
+    //this.write(this.webapp + "pom.xml", "qwerty");
   },
 
   install: function () {
