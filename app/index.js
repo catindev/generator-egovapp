@@ -19,51 +19,23 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       name: 'appname',
       message: 'Repo name',
-      default: "egov-pep-app-p00-00"
+      default: "p00-00"
     }];
 
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
 
   writing: {
     app: function () {
-      // this.fs.copy(
-      //   this.templatePath('_package.json'),
-      //   this.destinationPath('package.json')
-      // );
-      this.template('_package.json', 'package.json');
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-      this.fs.copy(
-        this.templatePath('_gulpfile.js'),
-        this.destinationPath('gulpfile.js')
-      );  
-      this.fs.copy(
-        this.templatePath('_.bowerrc'),
-        this.destinationPath('.bowerrc')
-      ); 
-      this.fs.copy(
-        this.templatePath('_.npmignore'),
-        this.destinationPath('.npmignore')
-      );                  
-    },
-
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
+      this.template('_package.json', 'package.json', this.props);
+      this.copy('_bower.json', 'bower.json');
+      this.copy('_gulpfile.js', 'gulpfile.js'); 
+      this.copy('_.bowerrc', '.bowerrc'); 
+      this.copy('_.npmignore', '.npmignore');                 
     }
   },
 

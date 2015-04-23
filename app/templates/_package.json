@@ -1,5 +1,5 @@
 {
-  "name": "egov-pep-app-<%= yeoman.props.appname %>",
+  "name": "egov-pep-app-<%= appname %>",
   "version": "1.0.0",
   "description": "",
   "main": "",
