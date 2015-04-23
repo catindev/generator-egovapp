@@ -1,5 +1,5 @@
 {
-  "name": "egovapp",
+  "name": "generator-egovapp",
   "version": "0.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
@@ -20,8 +20,9 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.19.0",
     "chalk": "^1.0.0",
+    "xml2js": "^0.4.8",
+    "yeoman-generator": "^0.19.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
