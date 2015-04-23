@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the impeccable ' + chalk.red('Egovapp') + ' generator!'
+      'Yo! This is ' + chalk.red('Egovapp') + ', easy app scaffolder! Wow!'
     ));
 
     var prompts = [{
