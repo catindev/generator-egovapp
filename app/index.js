@@ -16,6 +16,8 @@ module.exports = yeoman.generators.Base.extend({
       'Yo! This is ' + chalk.red('Egovapp') + ', easy service scaffolder! Wow!'
     ));
 
+    this.webapp =  "webapp/src/main/webapp/";
+
 /*    var prompts = [{
       name: 'appname',
       message: 'Repo name',
@@ -34,13 +36,12 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       var folder =  process.cwd().split('\\'); 
       folder = folder[folder.length-1].replace("egov-pep-app-","");
-      var webapp = "webapp/src/main/webapp/";
 
-      this.template('_package.json', webapp + 'package.json', { appname: folder });
-      this.copy('_bower.json', webapp + 'bower.json');
-      this.copy('_gulpfile.js', webapp + 'gulpfile.js'); 
-      this.copy('_.bowerrc', webapp + '.bowerrc'); 
-      this.copy('_.npmignore', webapp + '.npmignore');                 
+      this.template('_package.json', this.webapp + 'package.json', { appname: folder });
+      this.copy('_bower.json', this.webapp + 'bower.json');
+      this.copy('_gulpfile.js', this.webapp + 'gulpfile.js'); 
+      this.copy('_.bowerrc', this.webapp + '.bowerrc'); 
+      this.copy('_.npmignore', this.webapp + '.npmignore');                 
     }
   },
 
@@ -48,7 +49,7 @@ module.exports = yeoman.generators.Base.extend({
     var path   = './pom.xml',
         file   = this.readFileAsString(path);
 
-    this.write(path, "qwerty");
+    this.write(this.webapp + "pom.xml", "qwerty");
   },
 
   install: function () {
