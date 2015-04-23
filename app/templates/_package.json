@@ -1,5 +1,5 @@
 {
-  "name": "egov-pep-app-<%= appname %>",
+  "name": "<%= repo %>",
   "version": "1.0.0",
   "description": "",
   "main": "",

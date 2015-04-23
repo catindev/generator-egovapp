@@ -10,21 +10,17 @@ module.exports = yeoman.generators.Base.extend({
 
   prompting: function () {
     var done = this.async();
-
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Yo! This is ' + chalk.red('Egovapp') + ', easy service scaffolder! Wow!'
+      'Yo! This is ' + chalk.red('Egovapp') + ', egov build config scaffolder! Wow!'
     ));
-
-    this.webapp =  "webapp/src/main/webapp/";
     done();
   },
 
   writing: {
     app: function () {
-      var folder =  process.cwd().split('\\'); 
-      folder = folder[folder.length-1].replace("egov-pep-app-","");
-      this.template('_package.json', this.webapp + 'package.json', { appname: folder });
+      var webapp = "webapp/src/main/webapp/";
+      var folder =  process.cwd().split('\\');
+      this.template('_package.json', this.webapp + 'package.json', { repo: folder[folder.length-1] });
       this.copy('_bower.json', this.webapp + 'bower.json');
       this.copy('_gulpfile.js', this.webapp + 'gulpfile.js'); 
       this.copy('_.bowerrc', this.webapp + '.bowerrc'); 
