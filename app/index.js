@@ -27,18 +27,20 @@ module.exports = yeoman.generators.Base.extend({
       // To access props later use this.props.someOption;
       done();
     }.bind(this));*/
+    done();
   },
 
   writing: {
     app: function () {
       var folder =  process.cwd().split('\\'); 
       folder = folder[folder.length-1].replace("egov-pep-app-","");
+      var webapp = "webapp/src/main/webapp/";
 
-      this.template('_package.json', 'package.json', { appname: folder });
-      this.copy('_bower.json', 'bower.json');
-      this.copy('_gulpfile.js', 'gulpfile.js'); 
-      this.copy('_.bowerrc', '.bowerrc'); 
-      this.copy('_.npmignore', '.npmignore');                 
+      this.template('_package.json', webapp + 'package.json', { appname: folder });
+      this.copy('_bower.json', webapp + 'bower.json');
+      this.copy('_gulpfile.js', webapp + 'gulpfile.js'); 
+      this.copy('_.bowerrc', webapp + '.bowerrc'); 
+      this.copy('_.npmignore', webapp + '.npmignore');                 
     }
   },
 
