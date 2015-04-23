@@ -16,7 +16,7 @@ module.exports = yeoman.generators.Base.extend({
       'Yo! This is ' + chalk.red('Egovapp') + ', easy service scaffolder! Wow!'
     ));
 
-    var prompts = [{
+/*    var prompts = [{
       name: 'appname',
       message: 'Repo name',
       default: "p00-00"
@@ -26,12 +26,15 @@ module.exports = yeoman.generators.Base.extend({
       this.props = props;
       // To access props later use this.props.someOption;
       done();
-    }.bind(this));
+    }.bind(this));*/
   },
 
   writing: {
     app: function () {
-      this.template('_package.json', 'package.json', this.props);
+      var folder =  process.cwd().split('\\'); 
+      folder = folder[folder.length-1].replace("egov-pep-app-","");
+
+      this.template('_package.json', 'package.json', { appname: folder });
       this.copy('_bower.json', 'bower.json');
       this.copy('_gulpfile.js', 'gulpfile.js'); 
       this.copy('_.bowerrc', '.bowerrc'); 

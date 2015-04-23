@@ -1,4 +1,4 @@
-# generator-generator-egovapp [![Build Status](https://secure.travis-ci.org/catindev/generator-generator-egovapp.png?branch=master)](https://travis-ci.org/catindev/generator-generator-egovapp)
+# generator-egovapp
 
 > [Yeoman](http://yeoman.io) generator
 
