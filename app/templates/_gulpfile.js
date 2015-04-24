@@ -50,7 +50,7 @@ gulp.task('dhtml', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('node_modules/egov-pep-frontend/app/**/*.html')
+    return gulp.src('node_modules/egov-pep-frontend/app/declarations/**/*.html')
         .pipe(inlineimg('node_modules/egov-pep-frontend/'))
         .pipe(angularTemplates({
             module: 'app',
@@ -68,6 +68,11 @@ gulp.task('declaration', ['appcopy'], function() {
             .pipe(uglify({mangle: false})) 
         .pipe(sourcemaps.write())              
         .pipe(gulp.dest('node_modules/egov-pep-frontend/build/'));
+});
+
+/* TODO: выяснить и выпилить */
+gulp.task('locale-en-source', function(){
+    return gulp.src(['kit/**/en.json','app/**/en.json','i18n/**/en.json']);
 });
 
 /* locale constants */
@@ -105,7 +110,7 @@ gulp.task('locale-kk', function() {
 });
 
 // all-in main modules
-gulp.task('app', ['declaration', 'locale-en', 'locale-ru', 'locale-kk' ], function() {
+gulp.task('app', ['locale-en-source', 'declaration', 'locale-en', 'locale-ru', 'locale-kk' ], function() {
     return gulp.src('node_modules/egov-pep-frontend/framework/angular/**/*.js')
         .pipe(concat('app.js'))
         .pipe(uglify({mangle: false}))    
