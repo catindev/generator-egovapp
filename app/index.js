@@ -20,11 +20,11 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       var webapp = "webapp/src/main/webapp/";
       var folder =  process.cwd().split('\\');
-      this.template('_package.json', this.webapp + 'package.json', { repo: folder[folder.length-1] });
-      this.copy('_bower.json', this.webapp + 'bower.json');
-      this.copy('_gulpfile.js', this.webapp + 'gulpfile.js'); 
-      this.copy('_.bowerrc', this.webapp + '.bowerrc'); 
-      this.copy('_.npmignore', this.webapp + '.npmignore');              
+      this.template('_package.json', webapp + 'package.json', { repo: folder[folder.length-1] });
+      this.copy('_bower.json', webapp + 'bower.json');
+      this.copy('_gulpfile.js', webapp + 'gulpfile.js'); 
+      this.copy('_.bowerrc', webapp + '.bowerrc'); 
+      this.copy('_.npmignore', webapp + '.npmignore');              
     }
   }
 });
