@@ -50,7 +50,7 @@ gulp.task('dhtml', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('node_modules/egov-pep-frontend/app/declarations/**/*.html')
+    return gulp.src('node_modules/egov-pep-frontend/app/**/*.html')
         .pipe(inlineimg('node_modules/egov-pep-frontend/'))
         .pipe(angularTemplates({
             module: 'app',
@@ -62,7 +62,7 @@ gulp.task('html', function () {
 
 // all-in apps
 gulp.task('declaration', ['appcopy'], function() {
-    return gulp.src([ 'node_modules/egov-pep-frontend/app/declarations/**/*.js' ])
+    return gulp.src([ 'node_modules/egov-pep-frontend/app/**/*.js' ])
         .pipe(sourcemaps.init())
             .pipe(concat('declaration.js'))
             .pipe(uglify({mangle: false})) 
