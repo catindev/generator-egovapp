@@ -1,113 +1,112 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'publish' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
-4 verbose node symlink C:\Program Files\nodejs\\node.exe
-5 verbose publish [ '.' ]
-6 verbose cache add [ '.', null ]
-7 verbose cache add name=undefined spec="." args=[".",null]
-8 verbose parsed url { protocol: null,
-8 verbose parsed url   slashes: null,
-8 verbose parsed url   auth: null,
-8 verbose parsed url   host: null,
-8 verbose parsed url   port: null,
-8 verbose parsed url   hostname: null,
-8 verbose parsed url   hash: null,
-8 verbose parsed url   search: null,
-8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: '.',
-8 verbose parsed url   path: '.',
-8 verbose parsed url   href: '.' }
-9 silly lockFile 3a52ce78- .
-10 verbose lock . C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\3a52ce78-.lock
-11 verbose tar pack [ 'C:\\Users\\InesSoft_Usr\\AppData\\Roaming\\npm-cache\\generator-egovapp\\0.1.4\\package.tgz',
-11 verbose tar pack   '.' ]
-12 verbose tarball C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package.tgz
-13 verbose folder .
-14 info prepublish generator-egovapp@0.1.4
-15 silly lockFile 1f1177db-tar tar://.
-16 verbose lock tar://. C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\1f1177db-tar.lock
-17 silly lockFile 975b2965-erator-egovapp-0-1-4-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package.tgz
-18 verbose lock tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package.tgz C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\975b2965-erator-egovapp-0-1-4-package-tgz.lock
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\3a52ce78-.lock
+10 verbose tar pack [ 'C:\\Users\\InesSoft_Usr\\AppData\\Roaming\\npm-cache\\generator-egovapp\\0.1.6\\package.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package.tgz
+12 verbose folder .
+13 info prepublish generator-egovapp@0.1.6
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\1f1177db-tar.lock
+16 silly lockFile e2f2a51a-erator-egovapp-0-1-6-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package.tgz
+17 verbose lock tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package.tgz C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\e2f2a51a-erator-egovapp-0-1-6-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
 19 silly lockFile 1f1177db-tar tar://.
-20 silly lockFile 1f1177db-tar tar://.
-21 silly lockFile 975b2965-erator-egovapp-0-1-4-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package.tgz
-22 silly lockFile 975b2965-erator-egovapp-0-1-4-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package.tgz
-23 silly lockFile cf57ad55--generator-egovapp-0-1-4-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package
-24 verbose lock C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\cf57ad55--generator-egovapp-0-1-4-package.lock
-25 silly lockFile cf57ad55--generator-egovapp-0-1-4-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package
-26 silly lockFile cf57ad55--generator-egovapp-0-1-4-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.4\package
+20 silly lockFile e2f2a51a-erator-egovapp-0-1-6-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package.tgz
+21 silly lockFile e2f2a51a-erator-egovapp-0-1-6-package-tgz tar://C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package.tgz
+22 silly lockFile 56cb906a--generator-egovapp-0-1-6-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package
+23 verbose lock C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\56cb906a--generator-egovapp-0-1-6-package.lock
+24 silly lockFile 56cb906a--generator-egovapp-0-1-6-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package
+25 silly lockFile 56cb906a--generator-egovapp-0-1-6-package C:\Users\InesSoft_Usr\AppData\Roaming\npm-cache\generator-egovapp\0.1.6\package
+26 silly lockFile 3a52ce78- .
 27 silly lockFile 3a52ce78- .
-28 silly lockFile 3a52ce78- .
-29 silly publish { name: 'generator-egovapp',
-29 silly publish   version: '0.1.4',
-29 silly publish   description: 'Yeoman generator',
-29 silly publish   license: 'MIT',
-29 silly publish   main: 'app/index.js',
-29 silly publish   repository:
-29 silly publish    { type: 'git',
-29 silly publish      url: 'https://github.com/catindev/generator-egovapp' },
-29 silly publish   author:
-29 silly publish    { name: 'Владимир',
-29 silly publish      email: 'catindev@gmail.com',
-29 silly publish      url: 'https://github.com/catindev' },
-29 silly publish   scripts: { test: 'mocha' },
-29 silly publish   files: [ 'app' ],
-29 silly publish   keywords: [ 'yeoman-generator' ],
-29 silly publish   dependencies:
-29 silly publish    { chalk: '^1.0.0',
-29 silly publish      'yeoman-generator': '^0.19.0',
-29 silly publish      yosay: '^1.0.2' },
-29 silly publish   devDependencies: { mocha: '*' },
-29 silly publish   readme: '# generator-egovapp\r\n\r\n> [Yeoman](http://yeoman.io) generator\r\n\r\n\r\n## Getting Started\r\n\r\n### What is Yeoman?\r\n\r\nTrick question. It\'s not a thing. It\'s this guy:\r\n\r\n![](http://i.imgur.com/JHaAlBJ.png)\r\n\r\nBasically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.\r\n\r\nNot every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*\r\n\r\n```bash\r\nnpm install -g yo\r\n```\r\n\r\n### Yeoman Generators\r\n\r\nYeoman travels light. He didn\'t pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.\r\n\r\nTo install generator-generator-egovapp from npm, run:\r\n\r\n```bash\r\nnpm install -g generator-generator-egovapp\r\n```\r\n\r\nFinally, initiate the generator:\r\n\r\n```bash\r\nyo generator egovapp\r\n```\r\n\r\n### Getting To Know Yeoman\r\n\r\nYeoman has a heart of gold. He\'s a person with feelings and opinions, but he\'s very easy to work with. If you think he\'s too opinionated, he can be easily convinced.\r\n\r\nIf you\'d like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).\r\n\r\n\r\n## License\r\n\r\nMIT\r\n',
-29 silly publish   readmeFilename: 'README.md',
-29 silly publish   gitHead: 'f6c7d1b5cd58e060b3c9c959b83a6c072f547d0c',
-29 silly publish   bugs: { url: 'https://github.com/catindev/generator-egovapp/issues' },
-29 silly publish   homepage: 'https://github.com/catindev/generator-egovapp',
-29 silly publish   _id: 'generator-egovapp@0.1.4',
-29 silly publish   _shasum: 'ed8c8e3bf533aac3149dfa84f1a0646dc5002f0d',
-29 silly publish   _from: '.' }
-30 verbose request where is /generator-egovapp
-31 verbose request registry http://registry.npmjs.org/
-32 verbose request id 46f90f81570bd250
-33 verbose url raw /generator-egovapp
-34 verbose url resolving [ 'http://registry.npmjs.org/', './generator-egovapp' ]
-35 verbose url resolved http://registry.npmjs.org/generator-egovapp
-36 verbose request where is http://registry.npmjs.org/generator-egovapp
-37 info trying registry request attempt 1 at 10:00:39
-38 http PUT http://registry.npmjs.org/generator-egovapp
-39 http 403 http://registry.npmjs.org/generator-egovapp
-40 verbose headers { 'content-type': 'application/json',
-40 verbose headers   'cache-control': 'max-age=60',
-40 verbose headers   'content-length': '95',
-40 verbose headers   'accept-ranges': 'bytes',
-40 verbose headers   date: 'Fri, 24 Apr 2015 04:00:37 GMT',
-40 verbose headers   via: '1.1 varnish',
-40 verbose headers   connection: 'keep-alive',
-40 verbose headers   'x-served-by': 'cache-ams4130-AMS',
-40 verbose headers   'x-cache': 'MISS',
-40 verbose headers   'x-cache-hits': '0',
-40 verbose headers   'x-timer': 'S1429848036.968017,VS0,VE695' }
-41 error publish Failed PUT 403
-42 error Error: "You cannot publish over the previously published version 0.1.4." : generator-egovapp
-42 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:308:14)
-42 error     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:246:65)
-42 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
-42 error     at Request.emit (events.js:98:17)
-42 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1142:14)
-42 error     at Request.emit (events.js:117:20)
-42 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1096:12)
-42 error     at IncomingMessage.emit (events.js:117:20)
-42 error     at _stream_readable.js:943:16
-42 error     at process._tickCallback (node.js:419:13)
-43 error If you need help, you may report this *entire* log,
-43 error including the npm and node versions, at:
-43 error     <http://github.com/npm/npm/issues>
-44 error System Windows_NT 6.1.7601
-45 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
-46 error cwd C:\Users\InesSoft_Usr\Dropbox\Work\generator\generator-egovapp
-47 error node -v v0.10.32
-48 error npm -v 1.4.28
-49 verbose exit [ 1, true ]
+28 silly publish { name: 'generator-egovapp',
+28 silly publish   version: '0.1.6',
+28 silly publish   description: 'Yeoman generator',
+28 silly publish   license: 'MIT',
+28 silly publish   main: 'app/index.js',
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'https://github.com/catindev/generator-egovapp' },
+28 silly publish   author:
+28 silly publish    { name: 'Владимир',
+28 silly publish      email: 'catindev@gmail.com',
+28 silly publish      url: 'https://github.com/catindev' },
+28 silly publish   scripts: { test: 'mocha' },
+28 silly publish   files: [ 'app' ],
+28 silly publish   keywords: [ 'yeoman-generator' ],
+28 silly publish   dependencies:
+28 silly publish    { chalk: '^1.0.0',
+28 silly publish      'yeoman-generator': '^0.19.0',
+28 silly publish      yosay: '^1.0.2' },
+28 silly publish   devDependencies: { mocha: '*' },
+28 silly publish   readme: '# generator-egovapp\r\n\r\n> [Yeoman](http://yeoman.io) generator\r\n\r\n\r\n## Getting Started\r\n\r\n### What is Yeoman?\r\n\r\nTrick question. It\'s not a thing. It\'s this guy:\r\n\r\n![](http://i.imgur.com/JHaAlBJ.png)\r\n\r\nBasically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.\r\n\r\nNot every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*\r\n\r\n```bash\r\nnpm install -g yo\r\n```\r\n\r\n### Yeoman Generators\r\n\r\nYeoman travels light. He didn\'t pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.\r\n\r\nTo install generator-generator-egovapp from npm, run:\r\n\r\n```bash\r\nnpm install -g generator-generator-egovapp\r\n```\r\n\r\nFinally, initiate the generator:\r\n\r\n```bash\r\nyo generator egovapp\r\n```\r\n\r\n### Getting To Know Yeoman\r\n\r\nYeoman has a heart of gold. He\'s a person with feelings and opinions, but he\'s very easy to work with. If you think he\'s too opinionated, he can be easily convinced.\r\n\r\nIf you\'d like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).\r\n\r\n\r\n## License\r\n\r\nMIT\r\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: 'bfa5a202890786308c380dc96f8a0092b5c6fb9e',
+28 silly publish   bugs: { url: 'https://github.com/catindev/generator-egovapp/issues' },
+28 silly publish   homepage: 'https://github.com/catindev/generator-egovapp',
+28 silly publish   _id: 'generator-egovapp@0.1.6',
+28 silly publish   _shasum: '8400c6c32bed8f05caea957181b1d708d996f7f1',
+28 silly publish   _from: '.' }
+29 verbose request where is /generator-egovapp
+30 verbose request registry http://registry.npmjs.org/
+31 verbose request id cf55b31821fc6a26
+32 verbose url raw /generator-egovapp
+33 verbose url resolving [ 'http://registry.npmjs.org/', './generator-egovapp' ]
+34 verbose url resolved http://registry.npmjs.org/generator-egovapp
+35 verbose request where is http://registry.npmjs.org/generator-egovapp
+36 info trying registry request attempt 1 at 11:10:25
+37 http PUT http://registry.npmjs.org/generator-egovapp
+38 http 403 http://registry.npmjs.org/generator-egovapp
+39 verbose headers { 'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=60',
+39 verbose headers   'content-length': '95',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Fri, 24 Apr 2015 05:10:23 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-ams4134-AMS',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1429852222.783574,VS0,VE618' }
+40 error publish Failed PUT 403
+41 error Error: "You cannot publish over the previously published version 0.1.6." : generator-egovapp
+41 error     at RegClient.<anonymous> (c:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:308:14)
+41 error     at Request._callback (c:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:246:65)
+41 error     at Request.self.callback (c:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
+41 error     at Request.emit (events.js:98:17)
+41 error     at Request.<anonymous> (c:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1142:14)
+41 error     at Request.emit (events.js:117:20)
+41 error     at IncomingMessage.<anonymous> (c:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1096:12)
+41 error     at IncomingMessage.emit (events.js:117:20)
+41 error     at _stream_readable.js:943:16
+41 error     at process._tickCallback (node.js:419:13)
+42 error If you need help, you may report this *entire* log,
+42 error including the npm and node versions, at:
+42 error     <http://github.com/npm/npm/issues>
+43 error System Windows_NT 6.1.7601
+44 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+45 error cwd C:\Users\InesSoft_Usr\Dropbox\Work\generator\generator-egovapp
+46 error node -v v0.10.32
+47 error npm -v 1.4.28
+48 verbose exit [ 1, true ]
