@@ -61,8 +61,8 @@ gulp.task('html', function () {
 // all-in apps
 gulp.task('declaration', function() {
     return gulp.src([
-            'node_modules/egov-pep-frontend/app/**/*.js',
-            'app/**/*.js'
+            'node_modules/egov-pep-frontend/app/declarations/**/*.js',
+            'app/declarations/**/*.js'
         ])
         .pipe(sourcemaps.init())
             .pipe(concat('declaration.js'))
@@ -153,7 +153,7 @@ gulp.task('vendors', function(){
 });
 
 // all-in main modules
-gulp.task('build-js', [ 'vendors', 'components', 'declaration', 'html', 'dhtml' ],function() {
+gulp.task('build-js', [ 'vendors', 'app', 'declaration', 'components', 'html', 'dhtml' ],function() {
     return gulp.src([
             'node_modules/egov-pep-frontend/build/vendors.js',
             'node_modules/egov-pep-frontend/build/app.js',
