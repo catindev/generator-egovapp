@@ -11,7 +11,7 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
     this.log(yosay(
-      'Yo! This is ' + chalk.red('Egovapp ' +  this.pkg) + ', frontend config scaffolder! Wow!'
+      'Yo! This is ' + chalk.red('Egovapp ') + ', frontend config scaffolder! Wow!'
     ));
     done();
   },

@@ -74,10 +74,10 @@ gulp.task('declaration', function() {
 /* locale constants */
 gulp.task('locale-en', function() {
     return gulp.src([
-        'node_modules/egov-pep-frontend/kit/**/en.json',
-        'node_modules/egov-pep-frontend/app/**/en.json',
-        'app/**/en.json',
-        'node_modules/egov-pep-frontend/i18n/**/en.json'
+            'node_modules/egov-pep-frontend/kit/**/en.json',
+            'node_modules/egov-pep-frontend/app/**/en.json',
+            'app/**/en.json',
+            'node_modules/egov-pep-frontend/i18n/**/en.json'
         ])
         .pipe(extend('i18n.en.js'))
         .pipe(wrap('app.constant(\'i18n_en\',<%= contents %>);'))
@@ -86,10 +86,10 @@ gulp.task('locale-en', function() {
 
 gulp.task('locale-ru', function() {
     return  gulp.src([
-        'node_modules/egov-pep-frontend/kit/**/ru.json',
-        'node_modules/egov-pep-frontend/app/**/ru.json',
-        'app/**/ru.json',
-        'node_modules/egov-pep-frontend/i18n/**/ru.json'
+            'node_modules/egov-pep-frontend/kit/**/ru.json',
+            'node_modules/egov-pep-frontend/app/declarations/**/ru.json',
+            'app/declarations/**/ru.json',
+            'node_modules/egov-pep-frontend/i18n/**/ru.json'
         ])
         .pipe(extend('i18n.ru.js'))
         .pipe(wrap('app.constant(\'i18n_ru\',<%= contents %>);'))
@@ -99,8 +99,8 @@ gulp.task('locale-ru', function() {
 gulp.task('locale-kk', function() {
     return gulp.src([
         'node_modules/egov-pep-frontend/kit/**/kz.json',
-        'node_modules/egov-pep-frontend/app/**/kz.json',
-        'app/**/kk.json',
+        'node_modules/egov-pep-frontend/app/declarations/**/kz.json',
+        'app/declarations/**/kz.json',
         'node_modules/egov-pep-frontend/i18n/**/kz.json'
         ])
         .pipe(extend('i18n.kz.js'))
