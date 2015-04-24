@@ -15,11 +15,6 @@ var fs = require('fs');
 var dformat = require('dateformat');
 var pinfo = require('./package.json');
 
-gulp.task('appcopy', function() {
-    return gulp.src(['app/declarations/**/*'])
-    .pipe(gulp.dest("node_modules/egov-pep-frontend/app/declarations/"));
-});
-
 /* perfomance txt files */
 gulp.task('perf', function() {
     return gulp.src(['node_modules/egov-pep-frontend/framework/angular/misc/*.txt'])
@@ -50,7 +45,10 @@ gulp.task('dhtml', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('node_modules/egov-pep-frontend/app/declarations/**/*.html')
+    return gulp.src([
+            'node_modules/egov-pep-frontend/app/declarations/**/*.html',
+            'app/declarations/**/*.html'
+        ])
         .pipe(inlineimg('node_modules/egov-pep-frontend/'))
         .pipe(angularTemplates({
             module: 'app',
@@ -61,8 +59,11 @@ gulp.task('html', function () {
 });
 
 // all-in apps
-gulp.task('declaration', ['appcopy'], function() {
-    return gulp.src([ 'node_modules/egov-pep-frontend/app/**/*.js' ])
+gulp.task('declaration', function() {
+    return gulp.src([
+            'node_modules/egov-pep-frontend/app/**/*.js',
+            'app/**/*.js'
+        ])
         .pipe(sourcemaps.init())
             .pipe(concat('declaration.js'))
             .pipe(uglify({mangle: false})) 
@@ -70,16 +71,12 @@ gulp.task('declaration', ['appcopy'], function() {
         .pipe(gulp.dest('node_modules/egov-pep-frontend/build/'));
 });
 
-/* TODO: выяснить и выпилить */
-gulp.task('locale-en-source', function(){
-    return gulp.src(['kit/**/en.json','app/**/en.json','i18n/**/en.json']);
-});
-
 /* locale constants */
 gulp.task('locale-en', function() {
     return gulp.src([
         'node_modules/egov-pep-frontend/kit/**/en.json',
         'node_modules/egov-pep-frontend/app/**/en.json',
+        'app/**/en.json',
         'node_modules/egov-pep-frontend/i18n/**/en.json'
         ])
         .pipe(extend('i18n.en.js'))
@@ -91,6 +88,7 @@ gulp.task('locale-ru', function() {
     return  gulp.src([
         'node_modules/egov-pep-frontend/kit/**/ru.json',
         'node_modules/egov-pep-frontend/app/**/ru.json',
+        'app/**/ru.json',
         'node_modules/egov-pep-frontend/i18n/**/ru.json'
         ])
         .pipe(extend('i18n.ru.js'))
@@ -102,6 +100,7 @@ gulp.task('locale-kk', function() {
     return gulp.src([
         'node_modules/egov-pep-frontend/kit/**/kz.json',
         'node_modules/egov-pep-frontend/app/**/kz.json',
+        'app/**/kk.json',
         'node_modules/egov-pep-frontend/i18n/**/kz.json'
         ])
         .pipe(extend('i18n.kz.js'))
@@ -110,7 +109,7 @@ gulp.task('locale-kk', function() {
 });
 
 // all-in main modules
-gulp.task('app', ['locale-en-source', 'declaration', 'locale-en', 'locale-ru', 'locale-kk' ], function() {
+gulp.task('app', function() {
     return gulp.src('node_modules/egov-pep-frontend/framework/angular/**/*.js')
         .pipe(concat('app.js'))
         .pipe(uglify({mangle: false}))    
@@ -118,7 +117,7 @@ gulp.task('app', ['locale-en-source', 'declaration', 'locale-en', 'locale-ru', '
 });
 
 // all-in directives and services
-gulp.task('components', [ 'app' ], function() {
+gulp.task('components', ['locale-en', 'locale-ru', 'locale-kk'], function() {
     return gulp.src('node_modules/egov-pep-frontend/kit/**/*.js')
         .pipe(concat('components.js'))
         .pipe(uglify({ mangle: false }))
@@ -154,7 +153,7 @@ gulp.task('vendors', function(){
 });
 
 // all-in main modules
-gulp.task('build-js', [ 'vendors', 'components', 'html', 'dhtml' ],function() {
+gulp.task('build-js', [ 'vendors', 'components', 'declaration', 'html', 'dhtml' ],function() {
     return gulp.src([
             'node_modules/egov-pep-frontend/build/vendors.js',
             'node_modules/egov-pep-frontend/build/app.js',
@@ -188,7 +187,8 @@ gulp.task('build-less', function() {
         'node_modules/egov-pep-frontend/kit/_styles/pep/pep.less',
         'node_modules/egov-pep-frontend/framework/**/*.less',
         'node_modules/egov-pep-frontend/kit/directives/**/*.less',
-        'node_modules/egov-pep-frontend/app/**/*.less'
+        'node_modules/egov-pep-frontend/app/**/*.less',
+        'app/**/*.less'
     ])
     .pipe(concat('build.less'))
     .pipe(less())
