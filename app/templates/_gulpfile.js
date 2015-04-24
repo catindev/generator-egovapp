@@ -29,7 +29,7 @@ gulp.task('favicon', function() {
 
 /* fonts */
 gulp.task('fonts', function() {
-    return gulp.src(['node_modules/egov-pep-frontend/kit/_styles/fonts/*']).pipe(gulp.dest("build/fonts"));
+    return gulp.src(['node_modules/egov-pep-frontend/kit/_styles/fonts.css', 'node_modules/egov-pep-frontend/kit/_styles/fonts/*.woff']).pipe(gulp.dest("build/fonts"));
 });
 
 // templates cache
@@ -170,7 +170,6 @@ gulp.task('build-js', [ 'vendors', 'app', 'declaration', 'components', 'html', '
 gulp.task('build-less', function() {
     return  gulp.src([
         'node_modules/egov-pep-frontend/kit/_styles/mixins.less',
-        'node_modules/egov-pep-frontend/kit/_styles/fonts.less',
         'node_modules/egov-pep-frontend/kit/_styles/variables.less',
         'node_modules/egov-pep-frontend/kit/_styles/pod/pod_variables.less',
         'node_modules/egov-pep-frontend/kit/_styles/pep/pep_variables.less',
