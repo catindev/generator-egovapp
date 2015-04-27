@@ -14,7 +14,7 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
     this.log(yosay(
-      'Yo! This is ' + chalk.red('Egovapp ') + ', frontend config scaffolder! Wow!'
+      'Yo! This is ' + chalk.red('Egovapp ') + ' frontend config scaffolder! Wow!'
     ));
     done();
   },
@@ -27,18 +27,6 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('_gulpfile.js', webapp + 'gulpfile.js'); 
       this.copy('_.bowerrc', webapp + '.bowerrc'); 
       this.copy('_.npmignore', webapp + '.npmignore');              
-    },
-    makelink: function() {
-      var rimraf = require('rimraf');
-      var self = this;
-      rimraf('webapp/src/main/webapp/node_modules/egov-pep-frontend/build', function () {
-        self.spawnCommand(
-          'ln', 
-            [
-              '-s', 
-              'webapp/src/main/webapp/node_modules/egov-pep-frontend/build ' + self.root + 'egov-pep-frontend/src/main/resources/META-INF/resources/build'
-        ]);
-      });      
     }
   }
 });
