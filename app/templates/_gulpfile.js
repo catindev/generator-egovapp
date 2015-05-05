@@ -14,6 +14,7 @@ var lib = require('bower-files')();
 var fs = require('fs');
 var dformat = require('dateformat');
 var pinfo = require('./package.json');
+var finfo = require('./node_modules/egov-pep-frontend/package.json');
 
 /* perfomance txt files */
 gulp.task('perf', function() {
@@ -220,6 +221,7 @@ gulp.task('build', ['build-js', 'build-css', 'fonts', 'favicon', 'perf'], functi
         for(var file in js) jsTpl += '<script src="build/'+ js[file] +'.js' + prefix + '"></script>';
 
         var result = data.replace("<build info/>",  pinfo.name + ' v' + pinfo.version + ' @ '+ builat)
+            .replace("<frontend/>", finfo.version)
             .replace("<css assets/>", cssTpl)
             .replace("<js assets/>", jsTpl);
 
