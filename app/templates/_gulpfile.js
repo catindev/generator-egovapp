@@ -9,12 +9,11 @@ var angularTemplates = require('gulp-angular-templatecache');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var cssBase64 = require('gulp-css-base64');
-var inlineimg = require('gulp-inline-image-html');
+var inline_image_path = require('gulp-inline-image-path');
 var lib = require('bower-files')();
 var fs = require('fs');
 var dformat = require('dateformat');
 var pinfo = require('./package.json');
-var finfo = require('./node_modules/egov-pep-frontend/package.json');
 
 /* perfomance txt files */
 gulp.task('perf', function() {
@@ -33,10 +32,40 @@ gulp.task('fonts', function() {
     return gulp.src(['node_modules/egov-pep-frontend/kit/_styles/fonts.css', 'node_modules/egov-pep-frontend/kit/_styles/fonts/*.woff']).pipe(gulp.dest("build/fonts"));
 });
 
+/* inline images */
+gulp.task('imgs', function() {
+    return gulp.src([
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-vote-down.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-vote-up.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-status-fail-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-status-ok-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-pdf.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-pdf-small.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-status-warning-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/clock-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-security-large.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-flash-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-kaztoken-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-kaztoken-large-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-identity-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-kaztoken.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-flash.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/pep/icons/icon-cardreader.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-folder.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-up.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/logo.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-licence.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/icons/icon-flash-large-animated.gif",
+        "node_modules/egov-pep-frontend/kit/_styles/images/bg_pattern.png",
+        "node_modules/egov-pep-frontend/kit/_styles/images/support.png"
+    ])
+    .pipe(gulp.dest("build/images"));
+});
+
 // templates cache
 gulp.task('dhtml', function () {
     return gulp.src('node_modules/egov-pep-frontend/kit/directives/**/*.html')
-        .pipe(inlineimg('node_modules/egov-pep-frontend/'))
+        .pipe(inline_image_path({path:"build/images"}))
         .pipe(angularTemplates({
             module: 'app',
             root: 'kit/directives',
@@ -50,7 +79,7 @@ gulp.task('html', function () {
             'node_modules/egov-pep-frontend/app/declarations/**/*.html',
             'app/declarations/**/*.html'
         ])
-        .pipe(inlineimg('node_modules/egov-pep-frontend/'))
+        .pipe(inline_image_path({path:"build/images"}))
         .pipe(angularTemplates({
             module: 'app',
             root: 'app/declarations/',
@@ -208,7 +237,7 @@ gulp.task('build-css', ['build-less'], function(){
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('build', ['build-js', 'build-css', 'fonts', 'favicon', 'perf'], function(){
+gulp.task('build', ['build-js', 'build-css', 'fonts', 'imgs', 'favicon', 'perf'], function(){
     var d = new Date();
     var builat = dformat(d, "dd.mm HH:MM");
     var prefix = "?v=" + d.getTime();
@@ -221,7 +250,6 @@ gulp.task('build', ['build-js', 'build-css', 'fonts', 'favicon', 'perf'], functi
         for(var file in js) jsTpl += '<script src="build/'+ js[file] +'.js' + prefix + '"></script>';
 
         var result = data.replace("<build info/>",  pinfo.name + ' v' + pinfo.version + ' @ '+ builat)
-            .replace("<frontend/>", finfo.version)
             .replace("<css assets/>", cssTpl)
             .replace("<js assets/>", jsTpl);
 
