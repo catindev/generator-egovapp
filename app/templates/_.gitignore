@@ -17,3 +17,4 @@ webapp/src/main/webapp/node
 webapp/src/main/webapp/build
 webapp/src/main/webapp/favicon.ico
 webapp/src/main/webapp/index.html
+deploy.sh
