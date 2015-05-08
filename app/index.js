@@ -26,23 +26,8 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('_bower.json', webapp + 'bower.json');
       this.copy('_gulpfile.js', webapp + 'gulpfile.js'); 
       this.copy('_.bowerrc', webapp + '.bowerrc'); 
-      this.copy('_.npmignore', webapp + '.npmignore');              
-    },
-    gitignore: function() {
-      var fs = require('fs');
-      var ignore = [
-        'webapp/src/main/webapp/node_modules',
-        'webapp/src/main/webapp/node',
-        'webapp/src/main/webapp/build',
-        'webapp/src/main/webapp/favicon.ico',
-        'webapp/src/main/webapp/index.html'
-      ];  
-      var file = fs.createWriteStream('./.gitignore', {flags: 'a'});
-      file.on('error', function(err) { console.log(err) });
-      ignore.forEach(function(path) { file.write('\r\n' + path); });
-      file.end(function(){
-        console.log('gitignore updated');
-      });      
+      this.copy('_.npmignore', webapp + '.npmignore');    
+      this.copy('_.gitignore', '.gitignore');                  
     }
   }
 });
