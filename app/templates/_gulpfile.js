@@ -77,9 +77,9 @@ gulp.task('dhtml', function () {
 
 gulp.task('html', function () {
     return gulp.src([
-            'node_modules/egov-pep-frontend/app/declarations/**/*.html',
-            'app/declarations/**/*.html'
-        ])
+        'node_modules/egov-pep-frontend/app/declarations/**/*.html',
+        'app/declarations/**/*.html'
+    ])
         .pipe(inline_image_path({path:"build/images"}))
         .pipe(angularTemplates({
             module: 'app',
@@ -92,24 +92,24 @@ gulp.task('html', function () {
 // all-in apps
 gulp.task('declaration', function() {
     return gulp.src([
-            'node_modules/egov-pep-frontend/app/declarations/**/*.js',
-            'app/declarations/**/*.js'
-        ])
+        'node_modules/egov-pep-frontend/app/declarations/**/*.js',
+        'app/declarations/**/*.js'
+    ])
         .pipe(sourcemaps.init())
-            .pipe(concat('declaration.js'))
-            .pipe(uglify({mangle: false})) 
-        .pipe(sourcemaps.write())              
+        .pipe(concat('declaration.js'))
+        .pipe(uglify({mangle: false}))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('node_modules/egov-pep-frontend/build/'));
 });
 
 /* locale constants */
 gulp.task('locale-en', function() {
     return gulp.src([
-            'node_modules/egov-pep-frontend/kit/**/en.json',
-            'node_modules/egov-pep-frontend/app/**/en.json',
-            'app/**/en.json',
-            'node_modules/egov-pep-frontend/i18n/**/en.json'
-        ])
+        'node_modules/egov-pep-frontend/kit/**/en.json',
+        'node_modules/egov-pep-frontend/app/**/en.json',
+        'app/**/en.json',
+        'node_modules/egov-pep-frontend/i18n/**/en.json'
+    ])
         .pipe(extend('i18n.en.js'))
         .pipe(wrap('app.constant(\'i18n_en\',<%= contents %>);'))
         .pipe(gulp.dest("node_modules/egov-pep-frontend/kit/vars/"));
@@ -117,11 +117,11 @@ gulp.task('locale-en', function() {
 
 gulp.task('locale-ru', function() {
     return  gulp.src([
-            'node_modules/egov-pep-frontend/kit/**/ru.json',
-            'node_modules/egov-pep-frontend/app/declarations/**/ru.json',
-            'app/declarations/**/ru.json',
-            'node_modules/egov-pep-frontend/i18n/**/ru.json'
-        ])
+        'node_modules/egov-pep-frontend/kit/**/ru.json',
+        'node_modules/egov-pep-frontend/app/declarations/**/ru.json',
+        'app/declarations/**/ru.json',
+        'node_modules/egov-pep-frontend/i18n/**/ru.json'
+    ])
         .pipe(extend('i18n.ru.js'))
         .pipe(wrap('app.constant(\'i18n_ru\',<%= contents %>);'))
         .pipe(gulp.dest("node_modules/egov-pep-frontend/kit/vars/"));
@@ -133,7 +133,7 @@ gulp.task('locale-kk', function() {
         'node_modules/egov-pep-frontend/app/declarations/**/kz.json',
         'app/declarations/**/kz.json',
         'node_modules/egov-pep-frontend/i18n/**/kz.json'
-        ])
+    ])
         .pipe(extend('i18n.kz.js'))
         .pipe(wrap('app.constant(\'i18n_kz\',<%= contents %>);'))
         .pipe(gulp.dest("node_modules/egov-pep-frontend/kit/vars/"));
@@ -143,7 +143,7 @@ gulp.task('locale-kk', function() {
 gulp.task('app', function() {
     return gulp.src('node_modules/egov-pep-frontend/framework/angular/**/*.js')
         .pipe(concat('app.js'))
-        .pipe(uglify({mangle: false}))    
+        .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('node_modules/egov-pep-frontend/build/'));
 });
 
@@ -159,41 +159,41 @@ gulp.task('components', ['locale-en', 'locale-ru', 'locale-kk'], function() {
 gulp.task('vendors', function(){
     var bowerfiles = lib.ext('js').files;
     var libs = [
-            "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-ru.js",
-            "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-kz.js",
-            "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-en.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_kk-cyrl-kz.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru-kz.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru-ru.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-ui/angular-ui-ieshiv.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-ui/angular-ui.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload-html5-shim.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload-shim.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload.js",
-            "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/FileAPI.min.js"
-        ];
-    libs = bowerfiles.concat(libs);    
+        "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-ru.js",
+        "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-kz.js",
+        "node_modules/egov-pep-frontend/framework/lib/ui-date-locale/jquery.ui.datepicker-en.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_kk-cyrl-kz.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru-kz.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_ru-ru.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular/i18n/angular-locale_en.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-ui/angular-ui-ieshiv.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-ui/angular-ui.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload-html5-shim.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload-shim.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/angular-file-upload.js",
+        "node_modules/egov-pep-frontend/framework/lib/angular-file-upload/FileAPI.min.js"
+    ];
+    libs = bowerfiles.concat(libs);
     return gulp.src(libs)
-            .pipe(concat('vendors.js'))
-            .pipe(uglify({mangle: false}))    
+        .pipe(concat('vendors.js'))
+        .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('node_modules/egov-pep-frontend/build/'));
 });
 
 // all-in main modules
 gulp.task('build-js', [ 'vendors', 'app', 'declaration', 'components', 'html', 'dhtml' ],function() {
     return gulp.src([
-            'node_modules/egov-pep-frontend/build/vendors.js',
-            'node_modules/egov-pep-frontend/build/app.js',
-            'node_modules/egov-pep-frontend/build/html.js',
-            'node_modules/egov-pep-frontend/build/dhtml.js',
-            'node_modules/egov-pep-frontend/build/components.js',
-            'node_modules/egov-pep-frontend/build/declaration.js'
-        ])
-        .pipe(concat('build.js'))   
+        'node_modules/egov-pep-frontend/build/vendors.js',
+        'node_modules/egov-pep-frontend/build/app.js',
+        'node_modules/egov-pep-frontend/build/html.js',
+        'node_modules/egov-pep-frontend/build/dhtml.js',
+        'node_modules/egov-pep-frontend/build/components.js',
+        'node_modules/egov-pep-frontend/build/declaration.js'
+    ])
+        .pipe(concat('build.js'))
         .pipe(gulp.dest('build/'));
 });
 
@@ -220,9 +220,9 @@ gulp.task('build-less', function() {
         'node_modules/egov-pep-frontend/app/**/*.less',
         'app/**/*.less'
     ])
-    .pipe(concat('build.less'))
-    .pipe(less())
-    .pipe(gulp.dest('node_modules/egov-pep-frontend/kit/_styles/'));
+        .pipe(concat('build.less'))
+        .pipe(less())
+        .pipe(gulp.dest('node_modules/egov-pep-frontend/kit/_styles/'));
 });
 
 gulp.task('build-css', ['build-less'], function(){
@@ -231,11 +231,11 @@ gulp.task('build-css', ['build-less'], function(){
         "node_modules/egov-pep-frontend/framework/lib/angular-ui/angular-ui.css",
         "node_modules/egov-pep-frontend/framework/lib/angular/angular-csp.css"
     ])
-    .pipe(cssBase64())
-    .pipe(concat('build.css'))
-    .pipe(autoprefixer('last 10 versions', 'ie 9'))
-    .pipe(minifyCSS({keepBreaks: false}))
-    .pipe(gulp.dest('build/'));
+        .pipe(cssBase64())
+        .pipe(concat('build.css'))
+        .pipe(autoprefixer('last 10 versions', 'ie 9'))
+        .pipe(minifyCSS({keepBreaks: false}))
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('build', ['build-js', 'build-css', 'fonts', 'imgs', 'favicon', 'perf'], function(){
@@ -257,7 +257,7 @@ gulp.task('build', ['build-js', 'build-css', 'fonts', 'imgs', 'favicon', 'perf']
 
         fs.writeFile('./index.html', result, 'utf8', function (err) {
             if (err) return console.log(err)
-            else console.log("build success " + builat);    
+            else console.log("build success " + builat);
         });
     });
 });
